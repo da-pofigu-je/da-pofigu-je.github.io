@@ -31,14 +31,14 @@ export default class IngredientList extends Component<IProps, {}> {
     }
 
     private renderRow = (ingredient: Ingredient, index: number) => {
-        const { onDelete, onEdit } = this.props;
+        const { onEdit } = this.props;
 
         return (
             <tr key={index}>
                 <td>{ingredient.id}</td>
                 <td>{ingredient.name}</td>
                 <td>
-                    <button id="btnEdit">
+                    <button id="btnEdit" onClick={() => onEdit(ingredient)}>
                         <i className="fas fa-edit" />
                     </button>
                 </td>
