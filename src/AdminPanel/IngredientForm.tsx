@@ -22,7 +22,7 @@ export default class IngredientForm extends Component<IProps, {}> {
         const { ingredient, onCancel } = this.props;
 
         return (
-            <form className="city-form border border-secondary mb-5">
+            <form className="ingredient-form border border-secondary mb-5">
                 <div className="form-group p-1">
                     <label htmlFor="ingredientName">Название</label>
                     <input
@@ -46,9 +46,13 @@ export default class IngredientForm extends Component<IProps, {}> {
     }
 
     private handleAddOrSave = () => {
+        if (!this.nameRef.current || !this.nameRef.current.value) {
+            return;
+        }
+
         const { onAddOrSave } = this.props;
         const ingredient: Ingredient = new Ingredient();
-        ingredient.name = this.nameRef.current && this.nameRef.current.value || "";
+        ingredient.name = this.nameRef.current.value;
         onAddOrSave(ingredient);
     }
 }
