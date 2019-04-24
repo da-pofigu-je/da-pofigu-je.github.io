@@ -8,7 +8,7 @@ interface IState {
     currentIngredient: Ingredient | null;
 }
 
-export default class AdminPanel extends Component<{}, IState> {
+export default class Ingredients extends Component<{}, IState> {
     private idCount = 1;
 
     constructor(props: {}) {
@@ -27,7 +27,7 @@ export default class AdminPanel extends Component<{}, IState> {
 
     public render = () => {
         return (
-            <main className="container">
+            <section>
                 <IngredientForm
                     ingredient={this.state.currentIngredient}
                     onCancel={this.handleCancelEdit}
@@ -39,7 +39,7 @@ export default class AdminPanel extends Component<{}, IState> {
                     onDelete={this.handleDelete}
                     onEdit={this.handleEdit}
                 />
-            </main>
+            </section>
         );
     }
 
