@@ -22,7 +22,6 @@ export default class IngredientList extends Component<IProps, {}> {
                         <th>ID</th>
                         <th>Название</th>
                         <th />
-                        <th />
                     </tr>
                 </thead>
                 <tbody>{ingredients.map((x, i) => this.renderRow(x, i))}</tbody>
@@ -41,8 +40,6 @@ export default class IngredientList extends Component<IProps, {}> {
                     <button id="btnEdit" onClick={() => onEdit(ingredient)}>
                         <i className="fas fa-edit" />
                     </button>
-                </td>
-                <td>
                     <button id="btnDelete" onClick={() => this.handleDelete(ingredient)}>
                         <i className="fas fa-trash-alt" />
                     </button>
