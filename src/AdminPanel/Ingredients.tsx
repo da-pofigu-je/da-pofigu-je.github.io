@@ -62,6 +62,11 @@ export default class Ingredients extends Component<{}, IState> {
             return;
         }
 
+        if (this.state.ingredients.findIndex(x => x.name === ingredient.name) >= 0) {
+            alert(`ингредиент с именем '${ingredient.name}' уже есть!`);
+            return;
+        }
+
         if (this.state.currentIngredient.id === 0) {
             const newIngredients: Ingredient[] = [...this.state.ingredients];
             ingredient.id = this.idCount++;
