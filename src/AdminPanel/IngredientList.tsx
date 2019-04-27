@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Ingredient from "../models/ingredient";
+import "./IngredientList.css";
 
 export interface IProps {
     ingredients: Ingredient[];
