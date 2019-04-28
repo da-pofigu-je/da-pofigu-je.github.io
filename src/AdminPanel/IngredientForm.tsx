@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Ingredient from "../models/ingredient";
 
 export interface IProps {
-    ingredient: Ingredient | null;
+    ingredient: Ingredient;
     onCancel: () => any;
     onAddOrSave: (ingredient: Ingredient) => any;
 }
@@ -15,10 +15,6 @@ export default class IngredientForm extends Component<IProps, {}> {
     }
 
     public render = () => {
-        if (this.props.ingredient == null) {
-            return null;
-        }
-
         const { ingredient, onCancel } = this.props;
 
         return (

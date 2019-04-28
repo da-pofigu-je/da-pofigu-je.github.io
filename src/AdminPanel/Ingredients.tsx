@@ -28,11 +28,7 @@ export default class Ingredients extends Component<{}, IState> {
     public render = () => {
         return (
             <section className="ingredients">
-                <IngredientForm
-                    ingredient={this.state.currentIngredient}
-                    onCancel={this.handleCancelEdit}
-                    onAddOrSave={this.handleSave}
-                />
+                {this.renderFormOrNull()}
                 {this.renderAddBtnIfNeed()}
                 <IngredientList
                     ingredients={this.state.ingredients}
@@ -40,6 +36,20 @@ export default class Ingredients extends Component<{}, IState> {
                     onEdit={this.handleEdit}
                 />
             </section>
+        );
+    }
+
+    private renderFormOrNull = () => {
+        if (this.state.currentIngredient == null) {
+            return null;
+        }
+
+        return (
+            <IngredientForm
+                ingredient={this.state.currentIngredient}
+                onCancel={this.handleCancelEdit}
+                onAddOrSave={this.handleSave}
+            />
         );
     }
 
@@ -73,7 +83,7 @@ export default class Ingredients extends Component<{}, IState> {
             newIngredients.push(ingredient);
             this.setState({
                 ingredients: newIngredients,
-                currentIngredient: null,
+                currentIngredient: null
             });
 
             return;
@@ -81,7 +91,7 @@ export default class Ingredients extends Component<{}, IState> {
 
         this.state.currentIngredient.name = ingredient.name;
         this.setState({
-            currentIngredient: null,
+            currentIngredient: null
         });
     }
 
