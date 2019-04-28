@@ -27,7 +27,7 @@ export default class Ingredients extends Component<{}, IState> {
 
     public render = () => {
         return (
-            <section>
+            <section className="ingredients">
                 <IngredientForm
                     ingredient={this.state.currentIngredient}
                     onCancel={this.handleCancelEdit}

@@ -34,7 +34,7 @@ export default class Recipes extends Component<{}, IState> {
 
     public render = () => {
         return (
-            <section>
+            <section className="recipes">
                 <RecipeList
                     recipes={this.state.recipes}
                 />
