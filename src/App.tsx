@@ -10,7 +10,7 @@ export default class App extends Component {
             <Router>
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-2">
+                        <div className="col-2 navigation">
                             <NavLink
                                 className="m-2 btn btn-block btn-primary"
                                 activeClassName="active"
