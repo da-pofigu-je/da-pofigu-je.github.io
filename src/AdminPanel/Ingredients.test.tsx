@@ -20,5 +20,5 @@ it("ingredients: add btn opens ingredient form", () => {
 
     // check that there is a form
     const form2 = ingredientsWrapper.find(IngredientForm);
-    expect(form.length).toBe(1);
+    expect(form2.length).toBe(1);
 });
