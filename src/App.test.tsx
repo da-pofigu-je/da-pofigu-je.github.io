@@ -1,9 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import App from "./App";
+import Adapter from "enzyme-adapter-react-16";
+import Enzyme, { mount } from "enzyme";
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+/**
+ * Тестировать переключение url либо, сложно, либо бессмысленно.
+ * Поэтому здесь мы просто тестируем начальное состояние приложения.
+ */
+
+// tslint:disable:typedef
+
+Enzyme.configure({ adapter: new Adapter() });
+
+it("app: defualt navigation shows ingredients", () => {
+    const appWrapper = mount(<App />);
+
+    const recipes = appWrapper.find(".recipes").length;
+    const ingredients = appWrapper.find(".ingredients").length;
+    expect(recipes).toBe(0);
+    expect(ingredients).toBe(1);
+
+    // active class for btns
+    const navBtns = appWrapper.find(".navigation a");
+    const navIngredients = navBtns.at(0);
+    const navRecipes = navBtns.at(1);
+    expect(navIngredients.hasClass("active")).toBe(true);
+    expect(navRecipes.hasClass("active")).toBe(false);
 });

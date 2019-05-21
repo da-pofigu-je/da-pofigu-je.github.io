@@ -38,10 +38,10 @@ export default class IngredientList extends Component<IProps, {}> {
                 <td>{ingredient.id}</td>
                 <td>{ingredient.name}</td>
                 <td>
-                    <button id="btnEdit" onClick={() => onEdit(ingredient)}>
+                    <button onClick={() => onEdit(ingredient)}>
                         <i className="fas fa-edit" />
                     </button>
-                    <button id="btnDelete" onClick={() => this.handleDelete(ingredient)}>
+                    <button onClick={() => this.handleDelete(ingredient)}>
                         <i className="fas fa-trash-alt" />
                     </button>
                 </td>

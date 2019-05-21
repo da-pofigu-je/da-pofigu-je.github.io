@@ -4,14 +4,18 @@ import Ingredients from "./AdminPanel/Ingredients";
 import Recipes from "./AdminPanel/Recipes";
 import { BrowserRouter as Router, NavLink, Route, Switch, Redirect } from "react-router-dom";
 
-class App extends Component {
+export default class App extends Component {
     render = () => {
         return (
             <Router>
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-2">
-                            <NavLink className="m-2 btn btn-block btn-primary" activeClassName="active" to="/ingredients">
+                        <div className="col-2 navigation">
+                            <NavLink
+                                className="m-2 btn btn-block btn-primary"
+                                activeClassName="active"
+                                to="/ingredients"
+                            >
                                 Ингредиенты
                             </NavLink>
                             <NavLink className="m-2 btn btn-block btn-primary" activeClassName="active" to="/recipes">
@@ -31,5 +35,3 @@ class App extends Component {
         );
     }
 }
-
-export default App;
