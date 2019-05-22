@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import IngredientRepository from "../models/ingredientRepository";
-import Ingredient from "../models/ingredient";
+import IngredientRepository from "../../models/ingredientRepository";
+import Ingredient from "../../models/ingredient";
 
 // ingredient[] -> ingredient
 

@@ -6,7 +6,7 @@ export interface IProps {
     onChange: (amount: number) => any;
 }
 
-export default class IngredientAmount extends Component<IProps, {}> {
+export default class IngredientAmountRow extends Component<IProps, {}> {
     constructor(props: IProps) {
         super(props);
     }

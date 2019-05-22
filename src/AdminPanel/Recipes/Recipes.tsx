@@ -24,11 +24,11 @@ export default class Recipes extends Component<{}, IState> {
                     ingredients: [
                         {
                             ingredient: { id: 1, name: "test" },
-                            amount: "10 гр"
+                            amount: 10
                         },
                         {
                             ingredient: { id: 1, name: "test" },
-                            amount: "10 гр"
+                            amount: 10
                         }
                     ]
                 }
