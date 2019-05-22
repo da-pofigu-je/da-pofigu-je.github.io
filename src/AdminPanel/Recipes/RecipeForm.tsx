@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Recipe from "../../models/recipe";
 import IngredientAmount from "../IngredientAmount";
+import SelectIngredient from "../SelectIngredient";
+import Ingredient from "../../models/ingredient";
 
 export interface IProps {
     recipe: Recipe;
@@ -46,9 +48,14 @@ export default class RecipeForm extends Component<IProps, {}> {
                 <button type="button" className="btn btn-danger ml-4" onClick={onCancel}>
                     Cancel
                 </button>
-                <IngredientAmount ingredientName={"Апельсин"} onDelete={() => {}} onChange={() => {}}/>
+                <SelectIngredient onAdd={this.handleAddIngredient} />
+                <IngredientAmount ingredientName={"Апельсин"} onDelete={() => {}} onChange={() => {}} />
             </form>
         );
+    }
+
+    private handleAddIngredient = (ingredient: Ingredient | null) => {
+        console.dir(ingredient);
     }
 
     private handleAddOrSave = () => {
@@ -59,7 +66,7 @@ export default class RecipeForm extends Component<IProps, {}> {
         const { onAddOrSave } = this.props;
         const recipe: Recipe = new Recipe();
         recipe.name = this.nameRef.current.value;
-        recipe.description = this.descriptionRef.current && this.descriptionRef.current.value || "";
+        recipe.description = (this.descriptionRef.current && this.descriptionRef.current.value) || "";
         onAddOrSave(recipe);
     }
 }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import IngredientList from "./IngredientList";
 import IngredientForm from "./IngredientForm";
 import Ingredient from "../../models/ingredient";
+import IngredientRepository from "../../models/ingredientRepository";
 
 interface IState {
     ingredients: Ingredient[];
@@ -15,12 +16,7 @@ export default class Ingredients extends Component<{}, IState> {
         super(props);
 
         this.state = {
-            ingredients: [
-                { name: "Яблоко", id: this.idCount++ },
-                { name: "Апельсин", id: this.idCount++ },
-                { name: "Чеснок", id: this.idCount++ },
-                { name: "Молоко", id: this.idCount++ }
-            ],
+            ingredients: IngredientRepository.getAll(),
             currentIngredient: null
         };
     }
