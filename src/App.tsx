@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
-import Ingredients from "./AdminPanel/Ingredients";
-import Recipes from "./AdminPanel/Recipes";
+import Ingredients from "./AdminPanel/Ingredients/Ingredients";
+import Recipes from "./AdminPanel/Recipes/Recipes";
 import { BrowserRouter as Router, NavLink, Route, Switch, Redirect } from "react-router-dom";
 
 export default class App extends Component {

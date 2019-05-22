@@ -12,7 +12,7 @@ import Enzyme, { mount } from "enzyme";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-it("app: defualt navigation shows ingredients", () => {
+it("App: defualt navigation shows ingredients", () => {
     const appWrapper = mount(<App />);
 
     const recipes = appWrapper.find(".recipes").length;

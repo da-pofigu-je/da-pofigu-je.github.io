@@ -6,7 +6,7 @@ import IngredientForm from "./IngredientForm";
 // tslint:disable:typedef
 Enzyme.configure({ adapter: new Adapter() });
 
-it("ingredient form: can save not empty", () => {
+it("IngredientForm: can save not empty", () => {
     // assign
     const saveCb = jest.fn();
     const cancelCb = jest.fn();
@@ -24,7 +24,7 @@ it("ingredient form: can save not empty", () => {
     expect(saveCb).toBeCalledTimes(1);
 });
 
-it("ingredient form: can not save empty", () => {
+it("IngredientForm: can not save empty", () => {
     // assign
     const saveCb = jest.fn();
     const cancelCb = jest.fn();
@@ -40,7 +40,7 @@ it("ingredient form: can not save empty", () => {
     expect(saveCb).toBeCalledTimes(0);
 });
 
-it("ingredient form: cancel calls cb", () => {
+it("IngredientForm: cancel calls cb", () => {
     // assign
     const saveCb = jest.fn();
     const cancelCb = jest.fn();

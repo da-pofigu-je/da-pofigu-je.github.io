@@ -12,7 +12,7 @@ function setNotConfirmed() {
     window.confirm = jest.fn(() => false);
 }
 
-it("ingredient list: edit windget calls callback", () => {
+it("IngredientList: edit widget calls callback", () => {
     const ingredients = [{ id: 1, name: "ing" }];
     const editCb = jest.fn();
     const deleteCb = jest.fn();
@@ -26,7 +26,7 @@ it("ingredient list: edit windget calls callback", () => {
     expect(editCb).toBeCalled();
 });
 
-it("ingredient list: delete windget calls callback", () => {
+it("IngredientList: delete widget calls callback", () => {
     const ingredients = [{ id: 1, name: "ing" }];
     const editCb = jest.fn();
     const deleteCb = jest.fn();
@@ -40,7 +40,7 @@ it("ingredient list: delete windget calls callback", () => {
     expect(deleteCb).toBeCalled();
 });
 
-it("ingredient list: delete windget doesn't call callback", () => {
+it("IngredientList: delete widget doesn't call callback", () => {
     const ingredients = [{ id: 1, name: "ing" }];
     const editCb = jest.fn();
     const deleteCb = jest.fn();

@@ -2,10 +2,10 @@ import Ingredient from "./ingredient";
 
 export default class IngredientAmount {
     public ingredient: Ingredient | null;
-    public amount: string;
+    public amount: number;
 
     constructor() {
         this.ingredient = null;
-        this.amount = "";
+        this.amount = 0;
     }
 }

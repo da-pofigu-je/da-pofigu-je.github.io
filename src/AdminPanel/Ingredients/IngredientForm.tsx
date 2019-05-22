@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Ingredient from "../models/ingredient";
+import Ingredient from "../../models/ingredient";
 
 export interface IProps {
     ingredient: Ingredient;
