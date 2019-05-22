@@ -8,7 +8,7 @@ import Enzyme, { shallow } from "enzyme";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-it("ingredients: add btn opens ingredient form", () => {
+it("Ingredients: add btn opens IngredientForm", () => {
     const ingredientsWrapper = shallow(<Ingredients />);
 
     // check that there is no form

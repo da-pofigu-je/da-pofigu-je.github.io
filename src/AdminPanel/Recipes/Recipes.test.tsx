@@ -8,7 +8,7 @@ import RecipeForm from "./RecipeForm";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-it("ingredients: add btn opens ingredient form", () => {
+it("Recipes: add btn opens RecipeForm", () => {
     const recipesWrapper = shallow(<Recipes />);
 
     // check that there is no form
