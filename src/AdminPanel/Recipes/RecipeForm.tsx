@@ -4,6 +4,9 @@ import IngredientAmountRow from "./IngredientAmountRow";
 import SelectIngredient from "./SelectIngredient";
 import Ingredient from "../../models/ingredient";
 import IngredientAmount from "../../models/ingredientAmount";
+import IngredientRepository from "../../models/ingredientRepository";
+
+const ingredients = IngredientRepository.getAll();
 
 export interface IProps {
     recipe: Recipe;
@@ -51,7 +54,7 @@ export default class RecipeForm extends Component<IProps, IState> {
                     ref={this.descriptionRef}
                     required={true}
                 />
-                <SelectIngredient onAdd={this.handleAddIngredient} />
+                <SelectIngredient onAdd={this.handleAddIngredient} ingredients={ingredients} />
                 {this.renderIngredientRows()}
                 <button type="button" className="btn btn-primary" onClick={this.handleAddOrSave}>
                     {recipe.id ? "Сохранить рецепт" : "Добавить рецепт"}

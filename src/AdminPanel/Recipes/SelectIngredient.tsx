@@ -5,11 +5,11 @@ import Ingredient from "../../models/ingredient";
 // ingredient[] -> ingredient
 
 export interface IProps {
+    ingredients: Ingredient[];
     onAdd: (ingredient: Ingredient | null) => any;
 }
 
 interface IState {
-    ingredients: Ingredient[];
     currentIngredient: Ingredient | null;
 }
 
@@ -17,16 +17,13 @@ export default class SelectIngredient extends Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
 
-        const ingredients = IngredientRepository.getAll();
-
         this.state = {
-            ingredients,
-            currentIngredient: ingredients[0]
+            currentIngredient: props.ingredients[0]
         };
     }
 
     public render() {
-        const options = IngredientRepository.getAll().map(ingredient => (
+        const options = this.props.ingredients.map(ingredient => (
             <option value={ingredient.name} key={ingredient.name}>
                 {ingredient.name}
             </option>
@@ -54,7 +51,7 @@ export default class SelectIngredient extends Component<IProps, IState> {
     }
 
     private handleChange = (name: string) => {
-        const found = this.state.ingredients.find(x => x.name == name) || null;
+        const found = this.props.ingredients.find(x => x.name == name) || null;
         this.setState({
             currentIngredient: found
         });
