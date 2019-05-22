@@ -41,7 +41,7 @@ export default class SelectIngredient extends Component<IProps, IState> {
                     </select>
                 </label>
                 <button className="btn btn-success" onClick={() => this.handleAdd()}>
-                    Добавить
+                    <i className="fas fa-plus" />
                 </button>
             </div>
         );

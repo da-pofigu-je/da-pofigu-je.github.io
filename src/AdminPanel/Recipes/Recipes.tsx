@@ -49,7 +49,7 @@ export default class Recipes extends Component<{}, IState> {
     private renderAddBtnIfNeed = () => {
         return this.state.currentRecipe === null ? (
             <button type="button" className="btn btn-primary" onClick={this.handleAddRequest}>
-                Add
+                Добавить
             </button>
         ) : null;
     }

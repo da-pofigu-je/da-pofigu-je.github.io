@@ -51,14 +51,14 @@ export default class RecipeForm extends Component<IProps, IState> {
                     ref={this.descriptionRef}
                     required={true}
                 />
-                <button type="button" className="btn btn-primary" onClick={this.handleAddOrSave}>
-                    {recipe.id ? "Сохранить" : "Добавить"}
-                </button>
-                <button type="button" className="btn btn-danger ml-4" onClick={onCancel}>
-                    Cancel
-                </button>
                 <SelectIngredient onAdd={this.handleAddIngredient} />
                 {this.renderIngredientRows()}
+                <button type="button" className="btn btn-primary" onClick={this.handleAddOrSave}>
+                    {recipe.id ? "Сохранить рецепт" : "Добавить рецепт"}
+                </button>
+                <button type="button" className="btn btn-danger ml-4" onClick={onCancel}>
+                    Закрыть
+                </button>
             </form>
         );
     }
