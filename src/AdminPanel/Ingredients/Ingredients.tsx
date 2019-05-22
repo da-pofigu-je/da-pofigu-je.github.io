@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import IngredientList from "./IngredientList";
 import IngredientForm from "./IngredientForm";
-import Ingredient from "../models/ingredient";
+import Ingredient from "../../models/ingredient";
 
 interface IState {
     ingredients: Ingredient[];
