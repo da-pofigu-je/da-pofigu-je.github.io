@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Recipe from "../../models/recipe";
+import IngredientAmount from "../IngredientAmount";
 
 export interface IProps {
     recipe: Recipe;
@@ -45,6 +46,7 @@ export default class RecipeForm extends Component<IProps, {}> {
                 <button type="button" className="btn btn-danger ml-4" onClick={onCancel}>
                     Cancel
                 </button>
+                <IngredientAmount ingredientName={"Апельсин"} onDelete={() => {}} onChange={() => {}}/>
             </form>
         );
     }
