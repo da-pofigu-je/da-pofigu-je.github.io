@@ -37,7 +37,7 @@ export default class SelectIngredient extends Component<IProps, IState> {
                         {options}
                     </select>
                 </label>
-                <button className="btn btn-success" onClick={() => this.handleAdd()}>
+                <button className="btn btn-success" onClick={() => this.handleAdd()} type="button">
                     <i className="fas fa-plus" />
                 </button>
             </div>

@@ -26,7 +26,7 @@ export default class IngredientAmountRow extends Component<IProps, {}> {
                         />
                     </label>
                 </div>
-                <button onClick={() => onDelete()}>
+                <button onClick={() => onDelete()} type="button">
                     <i className="fas fa-trash-alt" />
                 </button>
             </div>
