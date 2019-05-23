@@ -16,12 +16,12 @@ it("RecipeForm: can save not empty", () => {
         description: "descr",
         ingredients: [
             {
-                ingredient: { id: 1, name: "test" },
+                ingredient: { id: 1, name: "test1" },
                 amount: 10
             },
             {
-                ingredient: { id: 1, name: "test" },
-                amount: 10
+                ingredient: { id: 2, name: "test2" },
+                amount: 11
             }
         ]
     };
@@ -56,12 +56,12 @@ it("RecipeForm: can not save empty", () => {
         description: "",
         ingredients: [
             {
-                ingredient: { id: 1, name: "test" },
+                ingredient: { id: 1, name: "test1" },
                 amount: 10
             },
             {
-                ingredient: { id: 1, name: "test" },
-                amount: 10
+                ingredient: { id: 2, name: "test2" },
+                amount: 11
             }
         ]
     };
@@ -86,12 +86,12 @@ it("RecipeForm: cancel calls cb", () => {
         description: "",
         ingredients: [
             {
-                ingredient: { id: 1, name: "test" },
+                ingredient: { id: 1, name: "test1" },
                 amount: 10
             },
             {
-                ingredient: { id: 1, name: "test" },
-                amount: 10
+                ingredient: { id: 2, name: "test2" },
+                amount: 11
             }
         ]
     };

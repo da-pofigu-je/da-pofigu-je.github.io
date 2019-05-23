@@ -26,7 +26,7 @@ export default class RecipeForm extends Component<IProps, IState> {
         super(props);
 
         this.state = {
-            ingredientAmounts: []
+            ingredientAmounts: props.recipe.ingredients,
         };
     }
 
@@ -83,7 +83,7 @@ export default class RecipeForm extends Component<IProps, IState> {
             .map(ia => (
                 <IngredientAmountRow
                     key={ia.ingredient!.name}
-                    ingredientName={ia.ingredient!.name}
+                    ingredientAmount={ia}
                     onDelete={() => this.handleDeleteRow(ia)}
                     onChange={a => this.handleChangeAmountRow(ia, a)}
                 />

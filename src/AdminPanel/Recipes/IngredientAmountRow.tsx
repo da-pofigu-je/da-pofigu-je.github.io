@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import IngredientAmount from "../../models/ingredientAmount";
 
 export interface IProps {
-    ingredientName: string;
+    ingredientAmount: IngredientAmount;
     onDelete: () => any;
     onChange: (amount: number) => any;
 }
@@ -12,13 +13,14 @@ export default class IngredientAmountRow extends Component<IProps, {}> {
     }
 
     public render() {
-        const { ingredientName, onDelete } = this.props;
+        const { ingredientAmount, onDelete } = this.props;
         return (
             <div className="form-inline">
                 <div className="form-group mx-sm-3 mb-2">
                     <label>
-                        {ingredientName}
+                        {ingredientAmount.ingredient!.name}
                         <input
+                            defaultValue={ingredientAmount.amount + ""}
                             type="number"
                             className="form-control"
                             placeholder="Количество"
@@ -26,7 +28,7 @@ export default class IngredientAmountRow extends Component<IProps, {}> {
                         />
                     </label>
                 </div>
-                <button onClick={() => onDelete()}>
+                <button onClick={() => onDelete()} type="button">
                     <i className="fas fa-trash-alt" />
                 </button>
             </div>
