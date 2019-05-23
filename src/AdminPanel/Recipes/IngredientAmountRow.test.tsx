@@ -10,7 +10,7 @@ it("IngredientAmountRow: delete widget calls callback", () => {
     // assert
     const deleteCb = jest.fn();
     const changeCb = jest.fn();
-    const wrapper = shallow(<IngredientAmountRow onDelete={deleteCb} onChange={changeCb} ingredientName={"name"} />);
+    const wrapper = shallow(<IngredientAmountRow onDelete={deleteCb} onChange={changeCb} ingredientAmount={"name"} />);
     const deleteWidget = wrapper.find("button").first();
 
     // action
@@ -24,7 +24,7 @@ it("IngredientAmountRow: amount input change calls callback", () => {
     // assert
     const deleteCb = jest.fn();
     const changeCb = jest.fn();
-    const wrapper = shallow(<IngredientAmountRow onDelete={deleteCb} onChange={changeCb} ingredientName={"name"} />);
+    const wrapper = shallow(<IngredientAmountRow onDelete={deleteCb} onChange={changeCb} ingredientAmount={"name"} />);
     const input = wrapper.find("input").first();
 
     // action
