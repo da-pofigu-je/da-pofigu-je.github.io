@@ -18,7 +18,7 @@ export default class Recipes extends Component<{}, IState> {
             currentRecipe: null,
             recipes: [
                 {
-                    id: 1,
+                    id: this.idCount++,
                     name: "name",
                     description: "descr",
                     ingredients: [
