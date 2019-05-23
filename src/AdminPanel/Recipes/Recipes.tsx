@@ -93,6 +93,7 @@ export default class Recipes extends Component<{}, IState> {
 
         this.state.currentRecipe.name = recipe.name;
         this.state.currentRecipe.description = recipe.description;
+        this.state.currentRecipe.ingredients = recipe.ingredients;
         this.setState({
             currentRecipe: null
         });
