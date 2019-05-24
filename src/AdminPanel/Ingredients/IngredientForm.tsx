@@ -48,7 +48,7 @@ export default class IngredientForm extends Component<IProps, {}> {
 
         const { onAddOrSave } = this.props;
         const ingredient: Ingredient = new Ingredient();
-        ingredient.name = this.nameRef.current.value;
+        ingredient.name = this.nameRef.current.value.trim();
         onAddOrSave(ingredient);
     }
 }
