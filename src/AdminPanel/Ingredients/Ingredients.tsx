@@ -68,7 +68,7 @@ export default class Ingredients extends Component<{}, IState> {
             return;
         }
 
-        if (this.state.ingredients.findIndex(x => x.name === ingredient.name) >= 0) {
+        if (this.state.ingredients.findIndex(x => x.name.toLocaleLowerCase() === ingredient.name.toLocaleLowerCase()) >= 0) {
             alert(`ингредиент с именем '${ingredient.name}' уже есть!`);
             return;
         }
